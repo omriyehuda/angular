@@ -1,0 +1,90 @@
+<html>
+
+  <!-- <div>
+    background-image: url("../../../assets/couponsss.jpg");
+  </div> -->
+<body>
+  
+  <div class="container">
+    <h1>Companies:</h1>
+    <div class="container">
+      <div class="row">
+                <ul class="list-group col-lg-4 couponItem" *ngFor="let company of companies | async">
+                  <li class="list-group-item">Id: {{company.id}}</li>
+                  <li class="list-group-item">companyName: {{company.companyName}}</li>
+                  <li class="list-group-item">password: {{company.password}}</li>
+                  <li class="list-group-item">email: {{company.email}}</li>
+                 
+                  <li class="list-group-item"><button class="btn btn-lg btn-default" (click)="setCompanyToUpdate(company)"data-toggle="modal" data-target="#updateCompanyModal">Edit</button></li>
+                  <li class="list-group-item"><button class="btn btn-lg btn-default" (click)="getCoupons()"data-toggle="modal" data-target="#getCouponsModal">getCoupons</button></li>
+                </ul>
+            </div>
+        </div>
+      </div>
+
+  <div id="updateCompanyModal" class="modal fade" role="dialog">
+      <div class="modal-dialog"> 
+        <!-- Modal content-->
+        <div class="modal-content modalPadding">
+          
+          <h2>Update your company</h2>
+                <form>
+                  <p>Please enter the company details</p>
+                  <hr class="sep"/>
+                  <div class="form-group">
+                    <label for="updateCompanyNameField">company Name</label>
+                    <input type="text" id="updateCompanyNameField" name="name_box" required="required" [(ngModel)]="companyToUpdate.companyName"/><span class="highlight"></span><span class="bar"></span>
+                  </div>
+                  <div class="form-group">
+                    <label for="updateCompanyPasswordField">company password</label>
+                    <input type="text" id="updateCompanyPasswordField" name="password_box" required="required" [(ngModel)]="companyToUpdate.password"/><span class="highlight"></span><span class="bar"></span>
+                  </div>
+                  <div class="form-group">
+                    <label for="updateCompanyEmailField">company email</label>
+                    <input type="text" id="updateCompanyEmailField" name="email_box" required="required" [(ngModel)]="companyToUpdate.email"/><span class="highlight"></span><span class="bar"></span>
+                  </div>
+       
+                  <div class="btn-box">
+                    <button class="btn btn-submit" (click)="updateCompany()" data-dismiss="modal">Update</button>
+                    <button class="btn btn-submit btn-danger" (click)="removeCompany()" data-dismiss="modal">Remove</button>
+                    <button class="btn btn-cancel" data-dismiss="modal">Cancel</button>
+                  </div>
+                </form>
+              </div>
+        </div>
+      </div>
+
+
+      <div id="getCouponsModal" class="modal fade" role="dialog">
+        <div class="modal-dialog"> 
+          <!-- Modal content-->
+          <div class="modal-content modalPadding">
+            
+            <h2>coupons</h2>
+
+            <ul class="list-group col-lg-4 couponItem" *ngFor="let c of coupons | async">
+              <li class="list-group-item">Id: {{c.id}}</li>
+              <li class="list-group-item">Title: {{c.title}}</li>
+              <li class="list-group-item">Start Date: {{c.startDate}}</li>
+              <li class="list-group-item">End Date: {{c.endDate}}</li>
+              <li class="list-group-item">Amount: {{c.amount}}</li>
+              <li class="list-group-item">Type: {{c.coupontype}}</li>
+              <li class="list-group-item">Description: {{c.message}}</li>
+              <li class="list-group-item">Price: {{c.price}}</li>
+              <li class="list-group-item"><img class="couponItemImage" src="{{c.image}}"></li>
+              <li class="list-group-item"><button class="btn btn-lg btn-default" (click)="setCouponToUpdate(c)"data-toggle="modal" data-target="#updateCouponModal">Edit</button></li>
+            </ul>
+                  
+                </div>
+          </div>
+        </div>
+  
+      
+</body> 
+
+</html>
+
+
+
+
+

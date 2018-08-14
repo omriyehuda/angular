@@ -1,0 +1,68 @@
+.btn-CreateCouponComponent {
+
+    width: 20cm;
+    height: 3cm;
+    color: black;
+    font-style: oblique;
+    background-color: brown;
+
+}
+.btn-GetAllCouponsComponent {
+
+    width: 20cm;
+    height: 3cm;
+    color: black;
+    font-style: oblique;
+    background-color: rgb(42, 85, 165);
+
+}
+.btn-GetAllCouponsByTypeComponent {
+
+    width: 20cm;
+    height: 3cm;
+    color: black;
+    font-style: oblique;
+    background-color: rgb(53, 243, 16);
+
+}
+.btn-GetCouponsByDateComponent {
+
+    width: 20cm;
+    height: 3cm;
+    color: black;
+    font-style: oblique;
+    background-color: rgb(57, 5, 199);
+
+}
+.btn-GetCouponsByPriceComponent {
+
+    width: 20cm;
+    height: 3cm;
+    color: black;
+    font-style: oblique;
+    background-color: rgb(245, 241, 7);
+
+}
+.btn-RemoveCouponComponent {
+
+    width: 20cm;
+    height: 3cm;
+    color: black;
+    font-style: oblique;
+    background-color: rgb(95, 10, 145);
+
+}
+.btn-UpdateCouponComponent {
+
+    width: 20cm;
+    height: 3cm;
+    color: black;
+    font-style: oblique;
+    background-color: rgb(179, 149, 149);
+
+}
+
+.couponForm {
+    padding:20px;
+}
+

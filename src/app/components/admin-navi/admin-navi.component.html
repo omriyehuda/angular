@@ -1,0 +1,78 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand">Admin</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+    
+     
+     
+      <!-- <a class="nav-item nav-link active" href="#" data-toggle="modal" data-target="#myModal">Create Coupon</a>
+      <a class="nav-item nav-link active" [routerLink] = "['/CreateCoupon']">Log out</a> -->
+      <a class="nav-item nav-link active" [routerLink] = "['/adminFacadeCompany']">Companies</a>
+      <a class="nav-item nav-link active" href="#" data-toggle="modal" data-target="#myCompanyModal">Create company</a>
+      
+      <a class="nav-item nav-link active" [routerLink] = "['/adminFacadeCustomer']">Customers</a>
+      <a class="nav-item nav-link active" href="#" data-toggle="modal" data-target="#myCustomerModal">Create customer</a>
+
+    </div>
+  </div>
+</nav>
+
+<div id="myCompanyModal" class="modal fade" role="dialog">
+    <div class="modal-dialog"> 
+      <!-- Modal content-->
+      <div class="modal-content">
+        <h2>Create a company</h2>
+              <form class="CompanyForm">
+                <p>Please enter the company details</p>
+                <hr class="sep"/>
+                <div class="form-group">
+                  <label for="createCouponTitleField">Company title/name:</label>
+                  <input type="text" id="createCompanyTitleField" name="title_box" required="required" [(ngModel)]="company.companyName"/><span class="highlight"></span><span class="bar"></span>
+                </div>
+                <div class="form-group">
+                  <label for="createCompanyStartDateField">password:</label>
+                  <input id="createCompanyStartDateField" type="text" name="password_box" required="required" [(ngModel)]="company.password"/><span class="highlight"></span><span class="bar"></span>
+                </div>
+                <div class="form-group">
+                  <label for="createCompanyStartDateField">email:</label>
+                  <input id="createCompanyStartDateField" type="text" name="email_box" required="required" [(ngModel)]="company.email"/><span class="highlight"></span><span class="bar"></span>
+                </div>
+                <div class="btn-box">
+                  <button class="btn btn-submit" (click)="createCompany()" data-dismiss="modal">Create</button>
+                  <button class="btn btn-cancel" (click)="clearFormAndExit()" data-dismiss="modal">Cancel</button>
+                </div>
+              </form>
+            </div>
+      </div>
+    </div>
+
+
+    <div id="myCustomerModal" class="modal fade" role="dialog">
+      <div class="modal-dialog"> 
+        <!-- Modal content-->
+        <div class="modal-content">
+          <h2>Create a Customer</h2>
+                <form class="CustomerForm">
+                  <p>Please enter the customer details</p>
+                  <hr class="sep"/>
+                  <div class="form-group">
+                    <label for="createCustomerTitleField">Customer name:</label>
+                    <input type="text" id="createCustomerTitleField" name="title_box" required="required" [(ngModel)]="customer.customerName"/><span class="highlight"></span><span class="bar"></span>
+                  </div>
+                  <div class="form-group">
+                    <label for="createCustomerStartDateField">password:</label>
+                    <input id="createCustomerStartDateField" type="text" name="password_box" required="required" [(ngModel)]="customer.password"/><span class="highlight"></span><span class="bar"></span>
+                  </div>
+                  <div class="btn-box">
+                    <button class="btn btn-submit" (click)="createCustomer()" data-dismiss="modal">Create</button>
+                    <button class="btn btn-cancel" (click)="clearFormAndExit()" data-dismiss="modal">Cancel</button>
+                  </div>
+                </form>
+              </div>
+        </div>
+      </div>
+  

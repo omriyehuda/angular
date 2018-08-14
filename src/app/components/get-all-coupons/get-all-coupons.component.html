@@ -1,0 +1,92 @@
+<html>
+
+  <!-- <div>
+    background-image: url("../../../assets/couponsss.jpg");
+  </div> -->
+<body>
+  
+  <div class="container">
+    <h1>Coupons:</h1>
+    <div class="container">
+      <div class="row">
+                <ul class="list-group col-lg-4 couponItem" *ngFor="let c of coupons | async">
+                  <li class="list-group-item">Id: {{c.id}}</li>
+                  <li class="list-group-item">Title: {{c.title}}</li>
+                  <li class="list-group-item">Start Date: {{c.startDate}}</li>
+                  <li class="list-group-item">End Date: {{c.endDate}}</li>
+                  <li class="list-group-item">Amount: {{c.amount}}</li>
+                  <li class="list-group-item">Type: {{c.coupontype}}</li>
+                  <li class="list-group-item">Description: {{c.message}}</li>
+                  <li class="list-group-item">Price: {{c.price}}</li>
+                  <li class="list-group-item"><img class="couponItemImage" src="{{c.image}}"></li>
+                  <li class="list-group-item"><button class="btn btn-lg btn-default" (click)="setCouponToUpdate(c)"data-toggle="modal" data-target="#updateCouponModal">Edit</button></li>
+                </ul>
+            </div>
+        </div>
+      </div>
+
+  <div id="updateCouponModal" class="modal fade" role="dialog">
+      <div class="modal-dialog"> 
+        <!-- Modal content-->
+        <div class="modal-content modalPadding">
+          
+          <h2>Update your coupon</h2>
+                <form>
+                  <p>Please enter the coupon details</p>
+                  <hr class="sep"/>
+                  <div class="form-group">
+                    <label for="createCouponTitleField">Coupon title/name</label>
+                    <input type="text" id="createCouponTitleField" name="title_box" required="required" [(ngModel)]="couponToUpdate.title"/><span class="highlight"></span><span class="bar"></span>
+                  </div>
+                  <div class="form-group">
+                    <label for="createCouponStartDateField">Start Date:</label>
+                    <input id="createCouponStartDateField" type="date" name="startDate_box" required="required" [(ngModel)]="couponToUpdate.startDate"/><span class="highlight"></span><span class="bar"></span>
+                  </div>
+                  <div class="form-group">
+                    <label for="createCouponEndDateField">End Date:</label>
+                    <input id="createCouponEndDateField" type="date" name="endDate_box" required="required" [(ngModel)]="couponToUpdate.endDate"/><span class="highlight"></span><span class="bar"></span>
+                  </div>
+                  <div class="form-group">
+                    <label for="createCouponAmountField">Amount</label>
+                    <input id="createCouponAmountField" type="number" name="amount_box" required="required" [(ngModel)]="couponToUpdate.amount"/><span class="highlight"></span><span class="bar"></span>
+                  </div>
+                  <div class="form-group">
+                    <label for="createCouponPriceField">Price</label>
+                    <input id="createCouponAmountField" type="number" name="price_box" required="required" [(ngModel)]="couponToUpdate.price"/><span class="highlight"></span><span class="bar"></span>
+                  </div>
+                  <div class="form-group">
+                    <label for="createCouponImageField">Image</label>
+                    <input id="createCouponImageField" type="text" name="image_box" required="required" [(ngModel)]="couponToUpdate.image"/><span class="highlight"></span><span class="bar"></span>
+                  </div>
+                  <div class="form-group">
+                    <label for="createCouponMessageField">Message:</label> <br>
+                    <textarea id="createCouponMessageField" style="width:300px"type="textarea" name="message_box" rows="5" required="required" [(ngModel)]="couponToUpdate.message"  ></textarea><span class="highlight"></span><span class="bar"></span>
+                  </div>
+                  <div class="form-group">
+                    <label for="createCouponTypeField">Type:</label>
+                    <select class="form-control" id="createCouponTypeField">
+                      <option>Musiume</option>
+                      <option>movie</option>
+                      <option>fun</option>
+                      <option>food</option>
+                      <option>Electronic</option>
+                    </select>
+                  </div>
+                  <div class="btn-box">
+                    <button class="btn btn-submit" (click)="updateCoupon()" data-dismiss="modal">Update</button>
+                    <button class="btn btn-submit btn-danger" (click)="deleteCoupon()" data-dismiss="modal">Remove</button>
+                    <button class="btn btn-cancel" data-dismiss="modal">Cancel</button>
+                  </div>
+                </form>
+              </div>
+        </div>
+      </div>
+
+</body> 
+
+</html>
+
+
+
+
+

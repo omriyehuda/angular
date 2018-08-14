@@ -1,0 +1,58 @@
+<html>
+
+
+<body>
+  
+  <div class="container">
+    <h1>Customers:</h1>
+    <div class="container">
+      <div class="row">
+                <ul class="list-group col-lg-4 couponItem" *ngFor="let customer of customers | async">
+                  <li class="list-group-item">Id: {{customer.id}}</li>
+                  <li class="list-group-item">customerName: {{customer.customerName}}</li>
+                  <li class="list-group-item">password: {{customer.password}}</li>
+
+                 
+                  <li class="list-group-item"><button class="btn btn-lg btn-default" (click)="setCustomerToUpdate(customer)"data-toggle="modal" data-target="#updateCustomerModal">Edit</button></li>
+                </ul>
+            </div>
+        </div>
+      </div>
+
+  <div id="updateCustomerModal" class="modal fade" role="dialog">
+      <div class="modal-dialog"> 
+        <!-- Modal content-->
+        <div class="modal-content modalPadding">
+          
+          <h2>Update your customer</h2>
+                <form>
+                  <p>Please enter the customer details</p>
+                  <hr class="sep"/>
+                  <div class="form-group">
+                    <label for="updateCustomerNameField">customer Name</label>
+                    <input type="text" id="updateCustomerNameField" name="name_box" required="required" [(ngModel)]="customerToUpdate.customerName"/><span class="highlight"></span><span class="bar"></span>
+                  </div>
+                  <div class="form-group">
+                    <label for="updateCustomerPasswordField">company password</label>
+                    <input type="text" id="updateCustomerPasswordField" name="password_box" required="required" [(ngModel)]="customerToUpdate.password"/><span class="highlight"></span><span class="bar"></span>
+                  </div>
+                  
+       
+                  <div class="btn-box">
+                    <button class="btn btn-submit" (click)="updateCustomer()" data-dismiss="modal">Update</button>
+                    <button class="btn btn-submit btn-danger" (click)="removeCustomer()" data-dismiss="modal">Remove</button>
+                    <button class="btn btn-cancel" data-dismiss="modal">Cancel</button>
+                  </div>
+                </form>
+              </div>
+        </div>
+      </div>
+
+</body> 
+
+</html>
+
+
+
+
+

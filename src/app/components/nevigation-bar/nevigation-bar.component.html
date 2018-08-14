@@ -1,0 +1,72 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand">Coupons</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+    
+     
+     
+      <a class="nav-item nav-link active" href="#" data-toggle="modal" data-target="#myModal">Create Coupon</a>
+      <a class="nav-item nav-link active" [routerLink] = "['/CreateCoupon']">Log out</a>
+    
+    </div>
+  </div>
+</nav>
+
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog"> 
+      <!-- Modal content-->
+      <div class="modal-content">
+        <h2>Create a coupon</h2>
+              <form class="couponForm">
+                <p>Please enter the coupon details</p>
+                <hr class="sep"/>
+                <div class="form-group">
+                  <label for="createCouponTitleField">Coupon title/name</label>
+                  <input type="text" id="createCouponTitleField" name="title_box" required="required" [(ngModel)]="c.title"/><span class="highlight"></span><span class="bar"></span>
+                </div>
+                <div class="form-group">
+                  <label for="createCouponStartDateField">Start Date:</label>
+                  <input id="createCouponStartDateField" type="date" name="startDate_box" required="required" [(ngModel)]="c.startDate"/><span class="highlight"></span><span class="bar"></span>
+                </div>
+                <div class="form-group">
+                  <label for="createCouponEndDateField">End Date:</label>
+                  <input id="createCouponEndDateField" type="date" name="endDate_box" required="required" [(ngModel)]="c.endDate"/><span class="highlight"></span><span class="bar"></span>
+                </div>
+                <div class="form-group">
+                  <label for="createCouponAmountField">Amount</label>
+                  <input id="createCouponAmountField" type="number" name="amount_box" required="required" [(ngModel)]="c.amount"/><span class="highlight"></span><span class="bar"></span>
+                </div>
+                <div class="form-group">
+                  <label for="createCouponPriceField">Price</label>
+                  <input id="createCouponAmountField" type="number" name="price_box" required="required" [(ngModel)]="c.price"/><span class="highlight"></span><span class="bar"></span>
+                </div>
+                <div class="form-group">
+                  <label for="createCouponImageField">Image</label>
+                  <input id="createCouponImageField" type="text" name="image_box" required="required" [(ngModel)]="c.image"/><span class="highlight"></span><span class="bar"></span>
+                </div>
+                <div class="form-group">
+                  <label for="createCouponMessageField">Message:</label> <br>
+                  <textarea id="createCouponMessageField" style="width:300px"type="textarea" name="message_box" rows="5" required="required" [(ngModel)]="c.message"  ></textarea><span class="highlight"></span><span class="bar"></span>
+                </div>
+                <div class="form-group">
+                  <label for="createCouponTypeField">Type:</label>
+                  <select class="form-control" id="createCouponTypeField">
+                    <option>Musiume</option>
+                    <option>movie</option>
+                    <option>fun</option>
+                    <option>food</option>
+                    <option>Electronic</option>
+                  </select>
+                </div>
+                <div class="btn-box">
+                  <button class="btn btn-submit" (click)="createCoupon()" data-dismiss="modal">Create</button>
+                  <button class="btn btn-cancel" (click)="clearFormAndExit()" data-dismiss="modal">Cancel</button>
+                </div>
+              </form>
+            </div>
+      </div>
+    </div>
